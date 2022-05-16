@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!--- Hi I'm bob I sell free robux --->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body>
+    <nav>
+        {% if 'logged_in' in session %}
+        You are branched out as {{ session.last_name }}, {{ session.first_name }} <a href="/logout">Branchin</a>
+        {% else %}
+        <a href="/login">Branch out</a>
+        {% endif %}
+    </nav>
+    {% block content %}{% endblock %}
+
+    <footer>
+        {% for message in get_flashed_messages() %}
+        <div>
+            <aside>
+
+                <p>{{ message }}</p>
+
+            </aside>
+        </div>
+        {% endfor %}
+    </footer>
+    
+
+</body>
+</html>

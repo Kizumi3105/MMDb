@@ -1,0 +1,63 @@
+{% extends '_layout.html' %}
+
+{% block title %}Sign of the up{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+
+    <label for="firstname">Former Name</label>
+    <input id="first_name" name="first_name">
+    <br>
+    <label for="last_name">Latter Name</label>
+    <input id="last_name" name="last_name">
+    <br>
+    <label for="email">Emalil</label>
+    <input id="email" name="email" type="email">
+    <br>
+    <p id="message"></p>
+    <p id="jokee"></p>
+    <label for="password">Give me your credentials</label>
+    <input id="password" name="password" type="password">
+    <br>
+    <label for="pic">Mug shot</label>
+    <input id="pic" name="avatar" type="file" accept="image/*">
+    <br>
+    <br>
+    <input type="submit" value="Sign of the up">
+</form>
+
+<script>
+    let emailInput = document.querySelector('#email');
+    let message = document.querySelector('#message');
+
+    let jokeInput = document.querySelector('#email');
+    let joke = document.querySelector('#jokee');
+
+    emailInput.addEventListener('input', checkUniqueEmail);
+    jokeInput.addEventListener('input', checkUniqueJoke);
+
+    async function checkUniqueEmail() {
+
+        let response = await fetch("/checkemail?email=" + emailInput.value);
+        let json = await response.json();
+
+        if (json.status == 'Aight.') {
+            message.style.color = 'green';
+            message.textContent = 'Email is available';
+        }
+        else {
+            message.style.color = 'red';
+            message.textContent = 'Email is taken';
+        }
+    }
+
+    async function checkUniqueJoke() {
+
+        let response = await fetch("https://icanhazdadjoke.com", { headers: { accept: 'application/json' } });
+        let json = await response.json();
+
+        joke.textContent = json.joke;
+    }
+</script>
+
+{% endblock %}

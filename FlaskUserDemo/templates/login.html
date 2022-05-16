@@ -1,0 +1,18 @@
+{% extends '_layout.html' %}
+
+{% block title %}Branchout{% endblock %}
+
+{% block content %}
+<div class="divine">
+    <form method="post">
+        <label for="email">Emalil:</label>
+        <input id="email" name="email" type="email">
+        <br>
+        <label for="password">Restrict puncuation:</label>
+        <input id="password" name="password" type="password">
+        <br>
+        <br>
+        <input type="submit" value="Discard keep">
+    </form>
+</div>
+{% endblock %}

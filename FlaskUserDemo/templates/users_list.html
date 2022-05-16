@@ -1,0 +1,30 @@
+{% extends '_layout.html' %}
+
+{% block title %}Dashingboard{% endblock %}
+
+{% block content %}
+
+    <table>
+        <tr>
+            <th>Former Name</th>
+            <th>Latter Name</th>
+            <th>Emalil</th>
+            <th>Kool kid buttons</th>
+        </tr>
+        {% for row in result %}
+        <tr>
+            <td>{{ row.first_name }}</td>
+            <td>{{ row.last_name }}</td>
+            <td>{{ row.email }}</td>
+            <td>
+                <a href="/view?id={{ row.id }}">See</a>
+                <a href="/edit?id={{ row.id }}">Morph</a>
+                <a href="/delete?id={{ row.id }}" onclick="return confirm('Snap fingies?')">Don't feel good-ify</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('add_user') }}">Create humans</a>
+
+{% endblock %}
