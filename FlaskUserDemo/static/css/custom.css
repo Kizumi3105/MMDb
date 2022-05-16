@@ -1,0 +1,129 @@
+body {
+    text-align: center;
+}
+
+nav {
+    margin-bottom: 20px;
+    padding: 2px;
+    padding-left: 1%;
+    background-color: darkseagreen;
+    text-align: left;
+}
+
+nav a {
+    text-align: right;
+}
+
+.divine {
+    background-color: blue;
+    padding: 20px;
+    margin: auto;
+    width: 25%;
+    border: solid;
+    border-width: 2px;
+    border-radius: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+}
+
+
+
+th, td {
+    border: 1px solid black;
+}
+
+tr {
+    background-color: grey;
+    color: white;
+}
+
+    tr:nth-child(2n) {
+        background-color: darkgrey;
+        color: black;
+    }
+
+a {
+    text-decoration: none;
+    color: indianred;
+    transition: ease;
+    transition-duration: 0.35s;
+    padding: 2px;
+}
+
+a:hover {
+    color: blue;
+}
+
+.kauri {
+    color: red;
+}
+
+.pohutukawa {
+    color: orange;
+}
+
+.totara {
+    color: yellow;
+}
+
+.rimu {
+    color: green;
+}
+
+.nikau {
+    color: blue;
+}
+
+.matai {
+    color: purple;
+}
+
+td a {
+    font-weight: bold;
+}
+
+li {
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+aside {
+    color: #911;
+    background-color: lightpink;
+    border-radius: 0.25rem;
+    max-width: 16rem;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+    animation: fade-out 3s 10s both;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.pfp_img {
+    border: dashed;
+    border-radius: 20px;
+}
+
+.boxy {
+    border: dashed;
+    padding: 2px;
+    color: blue;
+}
