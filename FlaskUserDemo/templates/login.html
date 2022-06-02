@@ -3,16 +3,21 @@
 {% block title %}Branchout{% endblock %}
 
 {% block content %}
-<div class="divine">
+<div class="boxy">
     <form method="post">
-        <label for="email">Emalil:</label>
+        <label for="email" title="Email">Emalil:</label>
+        <br />
         <input id="email" name="email" type="email">
         <br>
-        <label for="password">Restrict puncuation:</label>
+        <br />
+        <label for="password" title="Password">Restrict puncuation:</label>
+        <br />
         <input id="password" name="password" type="password">
         <br>
         <br>
-        <input type="submit" value="Discard keep">
+        <button type="submit" title="Login">
+            <p>log<sup>-1</sup>(in)</p>
+        </button>
     </form>
 </div>
 {% endblock %}

@@ -99,12 +99,25 @@ def add_user():
 @app.route('/dashboard')
 def list_users():
     if session['role'] != 'admin':
-        return abort(404)
+        flash("Only admins can access this page.")
+        return redirect('/')
     with create_connection() as connection:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM users")
             result = cursor.fetchall()
     return render_template('users_list.html', result = result)
+
+@app.route('/movies')
+def list_movies():
+    with create_connection() as connection:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM movies")
+            result = cursor.fetchall()
+    return render_template('movies.html', result = result)
+
+@app.route('/secret')
+def secret():
+    return render_template('epil.html')
 
 
 # TODO: Add a '/view' (view_user) route that uses SELECT

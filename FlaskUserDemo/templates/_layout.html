@@ -11,11 +11,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
 </head>
 <body>
+    <div id="header">
+        <h1 id="Title">Rent A <s>Girlf</s> Movie</h1>
+    </div>
     <nav>
+        <a href="/">Home</a>
         {% if 'logged_in' in session %}
-        You are branched out as {{ session.last_name }}, {{ session.first_name }} <a href="/logout">Branchin</a>
+        You are branched out as {{ session.last_name }}, {{ session.first_name }}<a href="/logout" title="Logout Button">Logout</a>
         {% else %}
-        <a href="/login">Branch out</a>
+        <a href="/login" title="Login Button">Login</a>
         {% endif %}
     </nav>
     {% block content %}{% endblock %}
@@ -31,7 +35,7 @@
         </div>
         {% endfor %}
     </footer>
-    
-
 </body>
+
+
 </html>

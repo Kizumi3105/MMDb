@@ -1,27 +1,45 @@
 body {
     text-align: center;
+    margin: 0;
+    height: 10000px;
 }
 
 nav {
-    margin-bottom: 20px;
-    padding: 2px;
-    padding-left: 1%;
+    padding: 20px 0px;
+    border: solid #00543c;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
     background-color: darkseagreen;
-    text-align: left;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 2%;
 }
 
 nav a {
-    text-align: right;
+    padding: 25px 10px;
+    margin-left: 15px;
 }
 
-.divine {
-    background-color: blue;
-    padding: 20px;
-    margin: auto;
-    width: 25%;
-    border: solid;
-    border-width: 2px;
-    border-radius: 20px;
+#header {
+    padding: 0px;
+    background-color: #333;
+    margin: 0 auto;
+    padding: 1px 0px;
+    overflow: hidden;
+}
+
+#Title {
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    width: 65%;
 }
 
 table {
@@ -29,7 +47,6 @@ table {
     width: 50%;
     margin: auto;
 }
-
 
 
 th, td {
@@ -41,10 +58,10 @@ tr {
     color: white;
 }
 
-    tr:nth-child(2n) {
-        background-color: darkgrey;
-        color: black;
-    }
+tr:nth-child(2n) {
+    background-color: darkgrey;
+    color: black;
+}
 
 a {
     text-decoration: none;
@@ -55,7 +72,7 @@ a {
 }
 
 a:hover {
-    color: blue;
+    color: royalblue;
 }
 
 .kauri {
@@ -123,7 +140,22 @@ aside {
 }
 
 .boxy {
-    border: dashed;
+    border: groove;
+    border-radius: 5px;
     padding: 2px;
-    color: blue;
+    color: black;
+    background-color: darkgrey;
+    margin: auto;
+    width: 20%;
+    padding: 20px;
+    font-size: ;
+}
+
+.woop {
+    display: flex;
+    height: 100%;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

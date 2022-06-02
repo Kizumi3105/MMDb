@@ -6,12 +6,18 @@
 
 <div class="boxy">
     <a href="{{ url_for('add_user') }}">Sign Upwards</a>
-    <br>
-    <br>
+    <br />
+    <br />
+    <a href="{{ url_for('list_movies') }}">View All Morb'ies</a>
 
     {% if session['role'] == 'admin' %}
-
+    <br />
+    <br />
     <a href="{{ url_for('list_users') }}">Spy on people</a>
+    <br />
+    <br />
+    <a href="/view?id={{ session['id'] }}">Witness thine account</a>
+    <a href="{{ url_for('list_movies') }}"></a>
     {% elif 'logged_in' in session %}
     <a href="/view?id={{ session['id'] }}">Witness thine account</a>
 
